@@ -3,19 +3,19 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Reminder.findAll({}).then(function(dbReminders) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        Reminders: dbReminders
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load Reminder page and pass in an Reminder by id
+  app.get("/Reminder/:id", function(req, res) {
+    db.Reminder.findOne({ where: { id: req.params.id } }).then(function(dbReminders) {
+      res.render("Reminder", {
+        Reminder: dbReminders
       });
     });
   });
