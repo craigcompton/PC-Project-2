@@ -1,10 +1,9 @@
-/* .list-group-item {
-  line-height: 2.5;
-} */
+body{
+  background-image: url("../images/44444.PNG");
+}
 
 .jumbotron{
   margin-top: 10px;
-  /* background-image: url("../images/background-18.jpg"); */
   height: 300px;
 }
 h2{
@@ -14,17 +13,43 @@ h2{
   text-align: center;
 }
 .previous{
-  color: white;
-  background-color: blue;
+  color: blue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 23px;
+  background-image: url("../images/5257b6c12d89875.jpg");
+  background-blend-mode: soft-light;
 }
-#current{
-  color: white;
-  background-color: forestgreen;
+.present{
+  color: blue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 23px;
+  background-image: url("../images/5257b6c12d89875.jpg");
+  background-blend-mode: screen;
 }
 .future{
-  color: white;
-  background-color: coral;
+  color: blue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 23px;
+  background-image: url("../images/5257b6c12d89875.jpg");
+  background-blend-mode: soft-light;
 }
-.today{
+.reminderBelow{
+  
+  color: white;
+  background-color: #004A7F;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 18px;
+  /* background-image: url("../images/5257b6c12d89875.jpg"); */
+  /* background-blend-mode: screen; */     
+}
 
+a, present{
+
+  height: 50px;
+  width: 300px;
+ margin-left: 5px;
 }

@@ -9,8 +9,7 @@
   <!-- Bootstrap CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../public/styles/styles.css">
-    <!-- jQuery -->
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">    <!-- jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -21,18 +20,18 @@
     <div class="container">
 
         <div class="jumbotron">
-          <div class="optionsDiv">
-          <a href="/previous" class="btn btn-danger btn-lg previous">
-            <span class="fa fa-arrow-circle-left"></span> Previous Reminders</a>
-            <a href="/present" class="btn btn-danger btn-lg present" >
-              <span class="fa fa-plus"></span><button class="btn btn-danger btn-lg present">Add New Reminders</button> 
-          <a href="/present" class="btn btn-danger btn-lg future"> Go To Today's Reminders <span class="fa fa-arrow-circle-right"></span></a>
-          <hr>
-          <a href="/future" class="btn btn-danger btn-lg today"> Future Reminders Below <hr>
-            <span class="fa fa-arrow-circle-down"></span></a>
-          
+            <div class="optionsDiv">
+            <a href="/previous" class="btn btn-danger btn-lg previous">
+              <span class="fa fa-arrow-circle-left"></span> Previous Reminders</a>
+              <a href="/present" class="btn btn-danger btn-lg present" id="present"> Add New Reminders
+                <span class="fa fa-plus"></span></a> 
+            <a href="/present" class="btn btn-danger btn-lg future"> Today's Reminders <span class="fa fa-arrow-circle-right"></span></a>
+            <hr>
+            <a href="/future" class="btn btn-danger btn-lg reminderBelow"> Future Reminders Below
+              <span class="fa fa-arrow-circle-down"></span></a>
+            
+            </div>
           </div>
-        </div>
         <div class="row">
     
           <div class="col-lg-12">
@@ -87,7 +86,10 @@
   </div> -->
 
   <!-- Custom Script -->
-  <script src="js/long.js" type="text/javascript"></script>
+
+
+  
+  <!-- <script src="js/long.js" type="text/javascript"></script> -->
 </body>
 
 </html>
