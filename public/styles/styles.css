@@ -1,3 +1,30 @@
-.list-group-item {
+/* .list-group-item {
   line-height: 2.5;
+} */
+
+.jumbotron{
+  margin-top: 10px;
+  /* background-image: url("../images/background-18.jpg"); */
+  height: 300px;
+}
+h2{
+  padding-top: 0px;
+}
+.optionsDiv{
+  text-align: center;
+}
+.previous{
+  color: white;
+  background-color: blue;
+}
+#current{
+  color: white;
+  background-color: forestgreen;
+}
+.future{
+  color: white;
+  background-color: coral;
+}
+.today{
+
 }
