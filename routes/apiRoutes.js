@@ -9,6 +9,13 @@ module.exports = function(app) {
   });
 
   // Get all previous reminders
+  app.get("/api/previous", function(req, res) {
+    db.Reminder.findAll({
+      whre
+    }).then(function(dbReminder) {
+      res.json(dbReminder);
+    });
+  });
 
   //Get all future reminders
 

@@ -33,6 +33,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/previous.html"));
   });
 
+  app.get("/addNew", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/addNew.html"));
+  });
+
 };
 
 
