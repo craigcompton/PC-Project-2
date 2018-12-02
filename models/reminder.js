@@ -7,4 +7,13 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Reminder;
 };
-
+  
+Author.associate = function(models) {
+  // Associating Author with Posts
+  // When an Author is deleted, also delete any associated Posts
+  Author.hasMany(models.Post, {
+    onDelete: "cascade"
+  });
+};
+   return UserInfo;
+ };
