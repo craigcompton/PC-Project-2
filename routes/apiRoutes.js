@@ -2,11 +2,12 @@ var db = require("../models"); //Hi Craig, this page is uputo date as of now, we
 
 module.exports = function(app) {
 //   // Get all reminders
-//   app.get("/api/reminders", function(req, res) {
-//     db.Reminder.findAll({}).then(function(dbReminder) {
-//       res.json(dbReminder);
-//     });
-//   });
+  app.get("/api/present", function(req, res) {
+    db.Reminder.findAll({}).then(function(dbReminder) {
+      res.json(dbReminder);
+    });
+  });
+
 
   // Get all previous reminders
   // app.get("/api/previous", function(req, res) {
