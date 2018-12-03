@@ -8,6 +8,17 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/previous", function(req, res) {
+    db.Reminder.findAll({}).then(function(dbReminder) {
+      res.json(dbReminder);
+    });
+  });
+
+  app.get("/api/future", function(req, res) {
+    db.Reminder.findAll({}).then(function(dbReminder) {
+      res.json(dbReminder);
+    });
+  });
 
   // Get all previous reminders
   // app.get("/api/previous", function(req, res) {
