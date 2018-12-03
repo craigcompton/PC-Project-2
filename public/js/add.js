@@ -13,7 +13,7 @@ $("#addSubmit").on("click", function(event) {
     };
   
     // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newReminder)
+    $.post("/api/addNew", newReminder)
       // On success, run the following code
       .then(function(data) {
         // Log the data we found
