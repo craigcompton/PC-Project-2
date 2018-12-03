@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Previous Reminders</title>
+
+  <!-- Bootstrap CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <console class="log">previous.html loaded</console>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <div class="optionsDiv">
+            <a href="/present" class="btn btn-danger btn-lg previous">
+              <span class="fa fa-arrow-circle-left"></span> Today's Reminders</a>
+              <a href="/addNew" class="btn btn-danger btn-lg addNew" id="addNew"> Add New Reminders
+                <span class="fa fa-plus"></span></a> 
+            <a href="/future" class="btn btn-danger btn-lg future"> Future Reminders <span class="fa fa-arrow-circle-right"></span></a>
+            <hr>
+            <a href="/previous" class="btn btn-danger btn-lg reminderBelow">Previous Reminders Below
+              <span class="fa fa-arrow-circle-down"></span></a>
+            
+            </div>
+          </div>
+        <div class="row">
+    
+          <div class="col-lg-12">
+    
+            <div class="card">
+              <div class="card-header">
+                Reminders
+              </div>
+              <div class="card-body" id="well-section">
+    
+                <!-- Content will go in here -->
+    
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+
+  <!-- <div class="container">
+
+    <div class="jumbotron">
+      <h1>Express Library</h1>
+      <h3>Books Books Books!</h3>
+      <hr>
+      <a href="/" class="btn btn-danger btn-lg">
+        <span class="fa fa-eye"></span> Search Books</a>
+      <a href="/add" class="btn btn-danger btn-lg">
+        <span class="fa fa-plus"></span> Add New Book</a>
+      <a href="/all" class="btn btn-danger btn-lg">
+        <span class="fa fa-th-list"></span> All Books</a>
+      <a href="/long" class="btn btn-danger btn-lg">
+        <span class="fa fa-th-list"></span> Long Books</a>
+      <a href="/short" class="btn btn-danger btn-lg">
+        <span class="fa fa-th-list"></span> Short Books</a>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            Add Book
+          </div>
+
+          <div class="card-body">
+            <form action="" method="POST" role="form">
+              <div class="form-group">
+                <label for="">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">Author</label>
+                <input type="text" class="form-control" id="author" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">Genre</label>
+                <input type="text" class="form-control" id="genre" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">Pages</label>
+                <input type="number" class="form-control" id="pages" placeholder="">
+              </div>
+            </form>
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="add-btn">
+                <span class="fa fa-book"></span> Add a book</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+
+  <!-- Custom Script -->
+  <!-- <script src="js/add.js" type="text/javascript"></script> -->
+</body>
+
+</html>

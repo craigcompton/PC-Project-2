@@ -1,7 +1,7 @@
 
 
 window.onload = function() {
-    console.log("page loaded");
+    console.log("present.js loaded");
     // Make a get request to our api route that will return every book
 $.get("/api/present", function(data) {
     // For each book that our server sends us back
@@ -16,10 +16,10 @@ $.get("/api/present", function(data) {
       $("#reminderSection").append(reminderSection);
   
       // Now  we add our book data to the well we just placed on the page
-      $("#reminder-show" + i).append("<h2>" + (i + 1) + ". " + data[i].title + "</h2>");
-      $("#reminder-show" + i).append("<h3>Date: " + data[i].date + "</h4>");
-      $("#reminder-show" + i).append("<h3>Time: " + data[i].time + "</h4>");
-    //   $("#reminder-show" + i).append("<h3>Pages: " + data[i].pages + "</h4>");
+      $("#reminder-show" + i).append("<h4>" + (i + 1) + ". " + data[i].title + "</h4>");
+      $("#reminder-show" + i).append("<h5>Date: " + data[i].date + "</h5>");
+      $("#reminder-show" + i).append("<h5>Time: " + data[i].time + "</h5>");
+    //   $("#reminder-show" + i).append("<h5>Pages: " + data[i].pages + "</h5>");
     }
   });
     
