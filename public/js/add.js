@@ -25,5 +25,4 @@ $("#addSubmit").on("click", function(event) {
     $("#newDate").val("");
     $("#newTime").val("");
     $("#newAlarm").val("");
-  
   });

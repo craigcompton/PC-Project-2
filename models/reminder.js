@@ -2,7 +2,7 @@
 module.exports = function (sequelize, DataTypes) {
   var Reminder = sequelize.define("Reminder", {
     title: DataTypes.TEXT,
-    date: DataTypes.DATE,
+    date: DataTypes.STRING,
     time: DataTypes.TIME,
     alarmType: DataTypes.TEXT
   });
