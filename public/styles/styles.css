@@ -2,8 +2,9 @@ body{
   background-image: url("../images/44444.PNG");
 }
 
-.jumbotron{
-  margin-top: 10px;
+.jumbotron, .row{
+  /* margin-top: 10px;
+  max-width: 500px; */
   /* height: 300px; */
   padding: 1%;
 }
