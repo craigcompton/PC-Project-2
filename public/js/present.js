@@ -43,6 +43,5 @@ $(".delete").click(function() {
   
 
 });
-}); 
-};
+}
 

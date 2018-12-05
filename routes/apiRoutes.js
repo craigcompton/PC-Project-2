@@ -4,20 +4,26 @@ var db = require("../models"); //Hi Craig, this page is uputo date as of now, we
 
 //required moment.js
 var moment = require("moment");
-moment().format();
-// grtting todays date
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
 
-if(dd<10) {
-    dd = '0'+dd
-} 
-if(mm<10) {
-    mm = '0'+mm
-} 
-today = yyyy + '/' + mm + '/' + dd;
+var today = moment().format("YYYY-MM-DD");
+
+
+
+
+
+// grtting todays date
+// var today = new Date();
+// var dd = today.getDate();
+// var mm = today.getMonth()+1; //January is 0!
+// var yyyy = today.getFullYear();
+
+// if(dd<10) {
+//     dd = '0'+dd
+// } 
+// if(mm<10) {
+//     mm = '0'+mm
+// } 
+// today = yyyy + '/' + mm + '/' + dd;
 
 //this normalizes date , not much helpful, may be helpful, did not use on this code, but we might need it
 // var normalizedDate = new Date(Date.now()).toISOString();
@@ -28,10 +34,14 @@ module.exports = function(app) {
 app.get("/api/add", function(req, res) {
   console.log("TODAY", today);
   db.Reminder.findAll({
-    order: [
-      // Will escape title and validate DESC against a list of valid direction parameters
-      [date, 'DESC']  
-    ]
+    // order: [
+    //   // Will escape title and validate DESC against a list of valid direction parameters
+    //   [date, 'DESC']  
+    // ]
+    
+    // where: {
+    //   date: today
+    // }
   }).then(function(dbReminder) {
     res.json(dbReminder);
   });
