@@ -1,5 +1,7 @@
 var db = require("../models"); //Hi Craig, this page is uputo date as of now, we just have to work on getting reminders
 
+//testing...................................................... 
+
 //required moment.js
 var moment = require("moment");
 moment().format();
@@ -21,8 +23,23 @@ today = yyyy + '/' + mm + '/' + dd;
 // var normalizedDate = new Date(Date.now()).toISOString();
 
 module.exports = function(app) {
+
 //   // Get all reminders
+app.get("/api/add", function(req, res) {
+  console.log("TODAY", today);
+  db.Reminder.findAll({
+    order: [
+      // Will escape title and validate DESC against a list of valid direction parameters
+      [date, 'DESC']  
+    ]
+  }).then(function(dbReminder) {
+    res.json(dbReminder);
+  });
+});
+
+//   // Get all present reminders
   app.get("/api/present", function(req, res) {
+    console.log("TODAY", today);
     db.Reminder.findAll({
       where: {
         date: today
