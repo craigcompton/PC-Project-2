@@ -1,5 +1,17 @@
 // The code in add.js handles what happens when the user clicks the "Add a book" button.
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
 
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("newDate").setAttribute("min", today);
 // When user clicks add-btn
 $("#addSubmit").on("click", function(event) {
     event.preventDefault();
@@ -11,6 +23,7 @@ $("#addSubmit").on("click", function(event) {
       time: $("#newTime").val().trim(),     
       // alarmType: $("#newAlarm").val().trim()
     };
+  
   
     // Send an AJAX POST-request with jQuery
     $.post("/api/addNew", newReminder)
