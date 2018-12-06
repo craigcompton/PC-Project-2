@@ -7,10 +7,6 @@ var moment = require("moment");
 
 var today = moment().format("YYYY-MM-DD");
 
-
-
-
-
 // grtting todays date
 // var today = new Date();
 // var dd = today.getDate();
@@ -28,65 +24,65 @@ var today = moment().format("YYYY-MM-DD");
 //this normalizes date , not much helpful, may be helpful, did not use on this code, but we might need it
 // var normalizedDate = new Date(Date.now()).toISOString();
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-//   // Get all reminders
-app.get("/api/add", function(req, res) {
-  console.log("TODAY", today);
-  db.Reminder.findAll({
-    // order: [
-    //   // Will escape title and validate DESC against a list of valid direction parameters
-    //   [date, 'DESC']  
-    // ]
-    
-    // where: {
-    //   date: today
-    // }
-  }).then(function(dbReminder) {
-    res.json(dbReminder);
+  //   // Get all reminders
+  app.get("/api/add", function (req, res) {
+    console.log("TODAY", today);
+    db.Reminder.findAll({
+      // order: [
+      //   // Will escape title and validate DESC against a list of valid direction parameters
+      //   [date, 'DESC']  
+      // ]
+
+      // where: {
+      //   date: today
+      // }
+    }).then(function (dbReminder) {
+      res.json(dbReminder);
+    });
   });
-});
 
-//   // Get all present reminders
-  app.get("/api/present", function(req, res) {
+  //   // Get all present reminders
+  app.get("/api/present", function (req, res) {
     console.log("TODAY", today);
     db.Reminder.findAll({
       where: {
         date: today
       }
-    }).then(function(dbReminder) {
+    }).then(function (dbReminder) {
       res.json(dbReminder);
     });
   });
 
   // get all previous reminders
-  app.get("/api/previous", function(req, res) {
+  app.get("/api/previous", function (req, res) {
     db.Reminder.findAll({
       where: {
         date: {
           $lt: today
-        }   
+        }
       }
-    }).then(function(dbReminder) {
+    }).then(function (dbReminder) {
       res.json(dbReminder);
     });
   });
 
   // get all future reminders
-  app.get("/api/future", function(req, res) {
+  app.get("/api/future", function (req, res) {
     db.Reminder.findAll({
       where: {
         date: {
           $gt: today
-        }   
+        }
       }
-    }).then(function(dbReminder) {
+    }).then(function (dbReminder) {
       res.json(dbReminder);
     });
   });
 
   // add new reminders
-  app.post("/api/addNew", function(req, res) {
+  app.post("/api/addNew", function (req, res) {
     console.log("Reminder Data:");
     console.log(req.body);
     db.Reminder.create({
@@ -94,22 +90,36 @@ app.get("/api/add", function(req, res) {
       date: req.body.date,
       time: req.body.time,
       // alarmType: req.body.alarmType
-    }).then(function(results) {
+    }).then(function (results) {
       res.json(results);
     });
   });
 
-    // Delete a reminder
-    app.delete("/api/reminder/:id", function(req, res) {
-      console.log("Reminder ID:");
-      console.log(req.params.id);
-      db.Reminder.destroy({
-        where: {
-          id: req.params.id
-        }
-      }).then(function() {
-        res.end();
-      });
+  // Delete a reminder
+  app.delete("/api/reminder/:id", function (req, res) {
+    console.log("Reminder ID:");
+    console.log(req.params.id);
+    db.Reminder.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function () {
+      res.end();
     });
-  };
+  });
 
+
+  // Update a reminder
+  // app.put("/api/reminder/:id", function (req, res) {
+  //   console.log("Reminder ID:");
+  //   console.log(req.params.id);
+  //   db.Reminder.update({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function () {
+  //     res.end();
+  //   });
+  // });
+
+};
