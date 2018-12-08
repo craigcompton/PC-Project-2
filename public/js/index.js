@@ -6,7 +6,7 @@ var $reminderList = $("#reminder-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveReminder: function(reminder) {
+  saveReminder: function (reminder) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -16,19 +16,19 @@ var API = {
       data: JSON.stringify(reminder)
     });
   },
-  getReminders: function() {
+  getReminders: function () {
     return $.ajax({
       url: "api/reminders",
       type: "GET"
     });
   },
-  deleteReminder: function(id) {
+  deleteReminder: function (id) {
     return $.ajax({
       url: "api/reminders/" + id,
       type: "DELETE"
     });
   },
-  updateReminder: function(id) {
+  updateReminder: function (id) {
     return $.ajax({
       url: "api/reminders/" + id,
       type: "UPDATE"
@@ -37,9 +37,9 @@ var API = {
 };
 
 // refreshReminders gets new reminders from the db and repopulates the list
-var refreshReminders = function() {
-  API.getReminders().then(function(data) {
-    var $reminders = data.map(function(reminder) {
+var refreshReminders = function () {
+  API.getReminders().then(function (data) {
+    var $reminders = data.map(function (reminder) {
       var $a = $("<a>")
         .Title(reminder.Title)
         .attr("href", "/reminder/" + reminder.id);
@@ -67,7 +67,7 @@ var refreshReminders = function() {
 
 // handleFormSubmit is called whenever we submit a new reminder
 // Save the new reminder to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
   var reminder = {
@@ -80,7 +80,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.savereminder(reminder).then(function() {
+  API.savereminder(reminder).then(function () {
     refreshreminders();
   });
 
@@ -90,12 +90,12 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an reminder's delete button is clicked
 // Remove the reminder from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deletereminder(idToDelete).then(function() {
+  API.deletereminder(idToDelete).then(function () {
     refreshreminders();
   });
 };

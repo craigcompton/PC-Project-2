@@ -1,5 +1,5 @@
-var now = moment(); 
-var timeNow = moment().format('h:mm a') 
+var now = moment();
+var timeNow = moment().format('h:mm a')
 var reminderNow = [];
 var timeTodayArr = [];
 
@@ -28,7 +28,7 @@ window.onload = function () {
       //   $("#reminder-show" + i).append("<h5>Pages: " + data[i].pages + "</h5>");
 
       timeTodayArr.push(data[i].time);
-      reminderNow.push (data[i].title);
+      reminderNow.push(data[i].title);
       console.log(timeTodayArr, reminderNow);
     }
 
@@ -41,7 +41,7 @@ window.onload = function () {
         .then(function () {
           console.log("Deleted Successfully!");
         });
-        window.location.reload();
+      window.location.reload();
       // $(this).closest("#reminder-show" + i).remove();
     });
 
@@ -68,7 +68,7 @@ $("#addSubmit").on("click", function (event) {
   var newReminder = {
     title: $("#newReminder").val().trim(),
     date: $("#newDate").val().trim(),
-    time: $("#newTime").val().trim(),    
+    time: $("#newTime").val().trim(),
   };
 
   // Send an AJAX POST-request with jQuery
@@ -84,27 +84,27 @@ $("#addSubmit").on("click", function (event) {
   $("#newDate").val("");
   $("#newTime").val("");
 });
-setInterval(function(){
+setInterval(function () {
   // if the current time equals a time in our timeTodayArr
-   for(let i = 0; i < timeTodayArr.length; i++){
+  for (let i = 0; i < timeTodayArr.length; i++) {
     //  console.log(timeNow)
-   var now = moment().format('HH:mm:00')
-   console.log(now);
-   console.log(timeTodayArr[i]);
+    var now = moment().format('HH:mm:00')
+    console.log(now);
+    console.log(timeTodayArr[i]);
     //  moment = moment.format()
-   if(now === timeTodayArr[i]){
-    // console.log(timeTodayArr);
-    if(window.Notification && Notification.permission !== "denied") {
-      Notification.requestPermission(function(status) {  // status is "granted", if accepted by user
-        var n = new Notification('Reminder', { 
-          body: reminderNow[i],
-          // icon: '/path/to/icon.png' // optional
-        }); 
-      });
+    if (now === timeTodayArr[i]) {
+      // console.log(timeTodayArr);
+      if (window.Notification && Notification.permission !== "denied") {
+        Notification.requestPermission(function (status) {  // status is "granted", if accepted by user
+          var n = new Notification('Reminder', {
+            body: reminderNow[i],
+            // icon: '/path/to/icon.png' // optional
+          });
+        });
+      }
+      console.log("alert is working");
+      //  alert(reminderNow[i]);  
     }
-     console.log("alert is working");
-    //  alert(reminderNow[i]);  
-   }
- }
- console.log("this timer is working");
-},15000)
+  }
+  console.log("this timer is working");
+}, 15000)
