@@ -84,42 +84,39 @@ h2{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
 }
-/* .future{
-  color: blue;
-  margin: 1%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bolder;
-  font-size: 23px;
-  background-image: url("../images/5257b6c12d89875.jpg");
-  background-blend-mode: soft-light;
-} */
 
-/* .reminderBelow{  
-  color: white;
-  margin: 1%;
-  background-color: #004A7F;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bolder;
-  font-size: 18px;
-  background-image: url("../images/5257b6c12d89875.jpg");
-  background-blend-mode: screen;     
-} */
+#well-section {
+  overflow: scroll;
+  height: 300px;
+}
 
-/* .present{
-  height: 50px;
-  width: 300px;
- margin-left: 5px;
-} */
+table, .well {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-/* .addNew{
-  color: blue;
-  margin: 1%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bolder;
-  font-size: 23px;
-  background-image: url("../images/5257b6c12d89875.jpg");
-  background-blend-mode: screen;
-} */
+td, th, .well{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.regBody{
+  background-color: white;
+}
+.centered-form{
+  margin-top: 60px;
+}
+
+.centered-form .panel{
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
 
 .form-row {
   margin: 1%;

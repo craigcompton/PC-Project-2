@@ -50,44 +50,16 @@ window.onload = function () {
   });
 };
 
-
-
-// The code in add.js handles what happens when the user clicks the "Add a book" button.
-// var today = new Date();
-// var dd = today.getDate();
-// var mm = today.getMonth() + 1; //January is 0!
-// var yyyy = today.getFullYear();
-// if (dd < 10) {
-//   dd = '0' + dd
-// }
-// if (mm < 10) {
-//   mm = '0' + mm
-// }
-
-
-
-// document.getElementById("newDate").setAttribute("min", today);
-
-//required moment.js
-// var moment = require("moment");
-
-// var today = moment().format("YYYY-MM-DD");
-// today = yyyy + '-' + mm + '-' + dd;
-
-
-
-// When user clicks add-btn
+// When user clicks submit-btn for a new reminder
 $("#addSubmit").on("click", function (event) {
   event.preventDefault();
 
-  // Make a newBook object
+  // Make a new reminder object
   var newReminder = {
     title: $("#newReminder").val().trim(),
     date: $("#newDate").val().trim(),
-    time: $("#newTime").val().trim(),
-    // alarmType: $("#newAlarm").val().trim()
+    time: $("#newTime").val().trim(),    
   };
-
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/addNew", newReminder)
@@ -101,5 +73,4 @@ $("#addSubmit").on("click", function (event) {
   $("#newReminder").val("");
   $("#newDate").val("");
   $("#newTime").val("");
-  $("#newAlarm").val("");
 });
