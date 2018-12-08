@@ -1,99 +1,105 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $reminderTitle = $("#reminder-title");
+var $reminderTime = $("#reminder-time");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $reminderList = $("#reminder-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveReminder: function (reminder) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/reminders",
+      data: JSON.stringify(reminder)
     });
   },
-  getExamples: function() {
+  getReminders: function () {
     return $.ajax({
-      url: "api/examples",
+      url: "api/reminders",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteReminder: function (id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/reminders/" + id,
       type: "DELETE"
+    });
+  },
+  updateReminder: function (id) {
+    return $.ajax({
+      url: "api/reminders/" + id,
+      type: "UPDATE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// refreshReminders gets new reminders from the db and repopulates the list
+var refreshReminders = function () {
+  API.getReminders().then(function (data) {
+    var $reminders = data.map(function (reminder) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .Title(reminder.Title)
+        .attr("href", "/reminder/" + reminder.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": reminder.id
         })
         .append($a);
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+        .Title("ｘ");
 
       $li.append($button);
 
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $reminderList.empty();
+    $reminderList.append($reminders);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// handleFormSubmit is called whenever we submit a new reminder
+// Save the new reminder to the db and refresh the list
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var reminder = {
+    Title: $reminderTitle.val().trim(),
+    Time: $reminderTime.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(reminder.Title && reminder.Time)) {
+    alert("You must enter a reminder Title and Time!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.savereminder(reminder).then(function () {
+    refreshreminders();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $reminderTitle.val("");
+  $reminderTime.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+// handleDeleteBtnClick is called when an reminder's delete button is clicked
+// Remove the reminder from the db and refresh the list
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deletereminder(idToDelete).then(function () {
+    refreshreminders();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$reminderList.on("click", ".delete", handleDeleteBtnClick);
