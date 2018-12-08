@@ -32,6 +32,7 @@ window.onload = function () {
         .then(function () {
           console.log("Deleted Successfully!");
         });
+        window.location.reload();
       // $(this).closest("#reminder-show" + i).remove();
     });
 
