@@ -1,6 +1,4 @@
-var db = require("../models"); //Hi Craig, this page is uputo date as of now, we just have to work on getting reminders
-
-//testing...................................................... 
+var db = require("../models");
 
 //required moment.js
 var moment = require("moment");

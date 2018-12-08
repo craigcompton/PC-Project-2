@@ -26,7 +26,7 @@ h2{
 }
 
 .notSelected{
-  color: black;
+  color: white;
   margin: 1%;
   border-radius: 5px;
   border-color: black;
@@ -48,7 +48,7 @@ h2{
   font-size: 23px;
   /* background-image: url("../images/5257b6c12d89875.jpg");
   background-blend-mode: screen; */
-  background-color: black;
+  background-color: #d9534f;
 }
 
 .topContainer {
@@ -69,6 +69,21 @@ h2{
   color: transparent;
 }
 
+#addSubmit {
+  background-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.addFormLabel {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.cardHeaderText {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
 /* .future{
   color: blue;
   margin: 1%;
