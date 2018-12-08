@@ -17,9 +17,9 @@ window.onload = function () {
       $("#reminder-show" + i).append("<h5>" + (i + 1) + ". " + data[i].title + "</h5>");
       $("#reminder-show" + i).append("<h6>Date: " + data[i].date + "</h6>");
       $("#reminder-show" + i).append("<h6>Time: " + data[i].time + "</h6>");
-      // $("#reminder-show" + i).append("<button class='update' data-id='" + data[i].id + "'>UPDATE</button>");
+      $("#reminder-show" + i).append("<button class='update' data-id='" + data[i].id + "'>EDIT</button>");
       $("#reminder-show" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE</button>");
-      
+
       //   $("#reminder-show" + i).append("<h5>Pages: " + data[i].pages + "</h5>");
     }
 
@@ -51,21 +51,29 @@ window.onload = function () {
 };
 
 
+
 // The code in add.js handles what happens when the user clicks the "Add a book" button.
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
-var yyyy = today.getFullYear();
-if (dd < 10) {
-  dd = '0' + dd
-}
-if (mm < 10) {
-  mm = '0' + mm
-}
+// var today = new Date();
+// var dd = today.getDate();
+// var mm = today.getMonth() + 1; //January is 0!
+// var yyyy = today.getFullYear();
+// if (dd < 10) {
+//   dd = '0' + dd
+// }
+// if (mm < 10) {
+//   mm = '0' + mm
+// }
 
-today = yyyy + '-' + mm + '-' + dd;
 
-document.getElementById("newDate").setAttribute("min", today);
+
+// document.getElementById("newDate").setAttribute("min", today);
+
+//required moment.js
+// var moment = require("moment");
+
+// var today = moment().format("YYYY-MM-DD");
+// today = yyyy + '-' + mm + '-' + dd;
+
 
 
 // When user clicks add-btn

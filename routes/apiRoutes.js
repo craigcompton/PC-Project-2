@@ -7,43 +7,18 @@ var moment = require("moment");
 
 var today = moment().format("YYYY-MM-DD");
 
-// grtting todays date
-// var today = new Date();
-// var dd = today.getDate();
-// var mm = today.getMonth()+1; //January is 0!
-// var yyyy = today.getFullYear();
-
-// if(dd<10) {
-//     dd = '0'+dd
-// } 
-// if(mm<10) {
-//     mm = '0'+mm
-// } 
-// today = yyyy + '/' + mm + '/' + dd;
-
-//this normalizes date , not much helpful, may be helpful, did not use on this code, but we might need it
-// var normalizedDate = new Date(Date.now()).toISOString();
-
 module.exports = function (app) {
 
-  //   // Get all reminders
+  //   // Get all reminders on the addNew page
   app.get("/api/add", function (req, res) {
     console.log("TODAY", today);
     db.Reminder.findAll({
-      // order: [
-      //   // Will escape title and validate DESC against a list of valid direction parameters
-      //   [date, 'DESC']  
-      // ]
-
-      // where: {
-      //   date: today
-      // }
     }).then(function (dbReminder) {
       res.json(dbReminder);
     });
   });
 
-  //   // Get all present reminders
+  //   // Get all of today's reminders for the 'present' page 
   app.get("/api/present", function (req, res) {
     console.log("TODAY", today);
     db.Reminder.findAll({
@@ -55,7 +30,7 @@ module.exports = function (app) {
     });
   });
 
-  // get all previous reminders
+  // get all of the past  reminders for the 'previous' page
   app.get("/api/previous", function (req, res) {
     db.Reminder.findAll({
       where: {
@@ -68,7 +43,7 @@ module.exports = function (app) {
     });
   });
 
-  // get all future reminders
+  // get all future reminders for the 'future' page
   app.get("/api/future", function (req, res) {
     db.Reminder.findAll({
       where: {
@@ -81,7 +56,7 @@ module.exports = function (app) {
     });
   });
 
-  // add new reminders
+  // add new reminders on the 'addNew' page
   app.post("/api/addNew", function (req, res) {
     console.log("Reminder Data:");
     console.log(req.body);
@@ -123,3 +98,4 @@ module.exports = function (app) {
   // });
 
 };
+

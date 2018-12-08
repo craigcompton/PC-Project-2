@@ -1,12 +1,18 @@
 body{
-  background-image: url("../images/44444.PNG");
+  /* background-image: url("../images/44444.PNG"); */
+  /* background-image: url("../styles/giphy.gif"); */
+  /* background-image: url("../styles/giphy\ \(1\).gif"); */
+  background-image: url("../styles/giphy\ \(2\).gif");
+  background-size: 100%;
 }
 
-.jumbotron, .row{
-  /* margin-top: 10px;
-  max-width: 500px; */
+.jumbotron {
+  /* /* margin-top: 10px; */
+  max-width: 100%;
   /* height: 300px; */
   padding: 1%;
+  /* background-image: url("../styles/giphy.gif"); */
+  background: transparent;
 }
 
 h2{
@@ -16,9 +22,54 @@ h2{
 .optionsDiv{
   text-align: center;
   margin: 5%;
+  /* background-color: green; */
 }
 
-.previous{
+.notSelected{
+  color: black;
+  margin: 1%;
+  border-radius: 5px;
+  border-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 23px;
+  /* background-image: url("../images/5257b6c12d89875.jpg");
+  background-blend-mode: soft-light; */
+  background-color: grey;
+}
+
+.selected{
+  color: white;
+  margin: 1%;
+  border-radius: 5px;
+  border-color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 23px;
+  /* background-image: url("../images/5257b6c12d89875.jpg");
+  background-blend-mode: screen; */
+  background-color: black;
+}
+
+.topContainer {
+  max-width: 100%;
+}
+
+#addNew {
+  justify-content: center;
+  align-content: center;
+}
+
+.addFormLabel {
+  background-color: black;
+  color: white;
+}
+.addFormLabelSubmit {
+  background: transparent;
+  color: transparent;
+}
+
+/* .future{
   color: blue;
   margin: 1%;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -26,38 +77,18 @@ h2{
   font-size: 23px;
   background-image: url("../images/5257b6c12d89875.jpg");
   background-blend-mode: soft-light;
-}
+} */
 
-.present{
-  color: blue;
-  margin: 1%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bolder;
-  font-size: 23px;
-  background-image: url("../images/5257b6c12d89875.jpg");
-  background-blend-mode: screen;
-}
-
-.future{
-  color: blue;
-  margin: 1%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bolder;
-  font-size: 23px;
-  background-image: url("../images/5257b6c12d89875.jpg");
-  background-blend-mode: soft-light;
-}
-
-.reminderBelow{  
+/* .reminderBelow{  
   color: white;
   margin: 1%;
   background-color: #004A7F;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
   font-size: 18px;
-  /* background-image: url("../images/5257b6c12d89875.jpg"); */
-  /* background-blend-mode: screen; */     
-}
+  background-image: url("../images/5257b6c12d89875.jpg");
+  background-blend-mode: screen;     
+} */
 
 /* .present{
   height: 50px;
@@ -65,7 +96,7 @@ h2{
  margin-left: 5px;
 } */
 
-.addNew{
+/* .addNew{
   color: blue;
   margin: 1%;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -73,9 +104,15 @@ h2{
   font-size: 23px;
   background-image: url("../images/5257b6c12d89875.jpg");
   background-blend-mode: screen;
-}
+} */
 
 .form-row {
   margin: 1%;
   width: 95%;
 }
+
+.addForm {
+  background: transparent;
+}
+
+

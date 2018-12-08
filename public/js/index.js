@@ -36,7 +36,7 @@ var API = {
   }
 };
 
-// refreshreminders gets new reminders from the db and repopulates the list
+// refreshReminders gets new reminders from the db and repopulates the list
 var refreshReminders = function() {
   API.getReminders().then(function(data) {
     var $reminders = data.map(function(reminder) {
