@@ -15,7 +15,7 @@ window.onload = function () {
       // Create a parent div to hold book data
       var reminderSection = $("<div>");
       // Add a class to this div: 'well'
-      reminderSection.addClass("well");
+      reminderSection.addClass("well"); 
       // Add an id to the well to mark which well it is
       reminderSection.attr("id", "reminder-show" + i);
       // Append the well to the well section
@@ -27,7 +27,7 @@ window.onload = function () {
       $("#reminder-show" + i).append("<h6>Date: " + data[i].date + "</h6>");
       $("#reminder-show" + i).append("<h6>Time: " + time + "</h6>");
       $("#reminder-show" + i).append("<button class='update' data-id='" + data[i].id + "'>EDIT</button>");
-      $("#reminder-show" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE REMINDER</button>");
+      $("#reminder-show" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE</button>");
       // save todays times and reminders in the arrays
       timeTodayArr.push(data[i].time);
       reminderNow.push(data[i].title);
