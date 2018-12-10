@@ -27,7 +27,7 @@ window.onload = function () {
       $("#reminder-show" + i).append("<h6>Date: " + data[i].date + "</h6>");
       $("#reminder-show" + i).append("<h6>Time: " + time + "</h6>");
       $("#reminder-show" + i).append("<button class='update' data-id='" + data[i].id + "'>EDIT</button>");
-      $("#reminder-show" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE REMINDER</button>");
+      $("#reminder-show" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE</button>");
       // save todays times and reminders in the arrays
       timeTodayArr.push(data[i].time);
       reminderNow.push(data[i].title);
