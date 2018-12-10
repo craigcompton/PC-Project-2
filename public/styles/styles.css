@@ -1,17 +1,11 @@
 body{
-  /* background-image: url("../images/44444.PNG"); */
-  /* background-image: url("../styles/giphy.gif"); */
-  /* background-image: url("../styles/giphy\ \(1\).gif"); */
   background-image: url("../styles/giphy\ \(2\).gif");
   background-size: 100%;
 }
 
 .jumbotron {
-  /* /* margin-top: 10px; */
-  max-width: 100%;
-  /* height: 300px; */
+   max-width: 100%;
   padding: 1%;
-  /* background-image: url("../styles/giphy.gif"); */
   background: transparent;
 }
 
@@ -22,7 +16,6 @@ h2{
 .optionsDiv{
   text-align: center;
   margin: 5%;
-  /* background-color: green; */
 }
 
 .notSelected{
