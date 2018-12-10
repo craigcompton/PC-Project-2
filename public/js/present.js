@@ -15,7 +15,7 @@ window.onload = function () {
       // Create a parent div to hold book data
       var reminderSection = $("<div>");
       // Add a class to this div: 'well'
-      reminderSection.addClass("well");
+      reminderSection.addClass("well"); 
       // Add an id to the well to mark which well it is
       reminderSection.attr("id", "reminder-show" + i);
       // Append the well to the well section
